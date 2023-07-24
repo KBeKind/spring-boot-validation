@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+REGISTER
+
+
+<form method="post" role="form"
+      th:action="@{/register}"
+      th:object="${registerDTO}">
+
+    <div class="">
+        <input
+                type="text"
+                class="form-control"
+                id="displayName"
+                placeholder="Display Name"
+                th:field="*{displayName}"/>
+        <label for="displayName">Display Name</label>
+        <p class="error" th:errors="*{displayName}"></p>
+    </div>
+
+    <div class="">
+        <input
+                type="text"
+                class="form-control"
+                id="username"
+                placeholder="Username"
+                th:field="*{username}">
+        <label for="username">Username</label>
+        <p class="error" th:errors="*{username}"></p>
+    </div>
+
+
+    <div class="">
+        <button th:href="@{/register}" type="submit" class="btn btn-primary btn-lg">Register</button>
+    </div>
+
+
+
+    <p class="text-center">Already registered? Click <a th:href="@{/login}" >HERE</a> to login</p>
+
+
+</form>
+</body>
+</html>
